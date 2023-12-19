@@ -1,0 +1,125 @@
+body {
+    background-color: #16111A;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    
+}
+
+svg {
+    cursor: pointer;
+}
+
+input {
+    cursor: pointer;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;   
+    width: 20%;
+    gap: 20px;
+    padding: 30px;
+    
+}   
+
+.password {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    border: 1px solid black;
+    padding: 20px;
+    background-color: #2D2039;
+    width: 100%;
+}
+
+.container2 {
+    width:100%;
+    background-color: #2D2039;
+    padding: 20px;
+    
+}
+.password-length {
+    width:100%;
+    background-color: #2D2039;
+    display: flex;
+    flex-direction: column;    
+}
+ 
+  .slider {
+    width: 100%; 
+    color: #A638F6;
+    margin: 10px 0px;
+    cursor: pointer;
+  }
+
+  #strength {
+    color: #16111A;
+  }
+
+.strength-box {
+    
+    background-color: #A638F6;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;   
+    align-items: center;
+    gap:10px;
+}
+
+.strength-meter-boxes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap:5px;
+    background-color: transparent;
+    border: #16111A;
+}
+
+#box-1 {
+    border: #16111A;
+    padding:10px 5px;
+    border: 5px solid white;
+}
+
+#box-2 {
+    border: #16111A;
+    padding:10px 5px;
+    border: 5px solid white;
+}
+#box-3 {
+    border: #16111A;
+    padding:10px 5px;
+    border: 5px solid white;
+}
+#box-4 {
+    border: #16111A;
+    padding:10px 5px;
+    border: 5px solid white;
+}
+
+
+
+button {
+    background-color: #A638F6;
+    width: 100%;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 20px ;
+}
+
+button:hover {
+    background-color: #c285ed;
+    cursor: pointer;
+}
+
+.logo {
+    gap:10px;
+}
