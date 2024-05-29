@@ -47,7 +47,9 @@ input {
     width:100%;
     background-color: #2D2039;
     display: flex;
-    flex-direction: column;    
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;    
 }
  
   .slider {
@@ -55,6 +57,12 @@ input {
     color: #A638F6;
     margin: 10px 0px;
     cursor: pointer;
+  }
+
+  #slider-value {
+    color: #A638F6;
+    font-size: 30px;
+    font-weight: 600;
   }
 
   #strength {
@@ -80,6 +88,12 @@ input {
     gap:5px;
     background-color: transparent;
     border: #16111A;
+}
+
+#boxes {
+    display: flex;
+    flex-direction: row;
+    gap:5px;
 }
 
 #box-1 {
@@ -123,3 +137,20 @@ button:hover {
 .logo {
     gap:10px;
 }
+.copy-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 999;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .hidden {
+    opacity: 0;
+    pointer-events: none;
+  }

@@ -3,59 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="icon" sizes="32x32" href="./assets/images/techover.ico" />
     <link rel="stylesheet" href="style.css">
-    <script src="index.js"></script>
+    
     <title>LösenordsGenerator</title>
   </head>
   <body>
     <div class="container">
       <div>Password Generator </div>
       <div class="password">
-        <div>uvt1k5v3b28o87a </div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="35.373" height="43.56" viewBox="0 0 35.373 43.56">
+        <div id="generated-password"></div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="35.373" height="43.56" viewBox="0 0 35.373 43.56">
           <g id="copy" transform="translate(-1428.197 -707.762)">
-          <path id="Path_267" data-name="Path 267" d="M17657.32,370.466h18.391v6.666h-25.152V343.97h6.762v26.5Z" transform="translate(-16220.861 372.69)" fill="none" stroke="#a638f6" stroke-linejoin="round" stroke-width="3"/>
-          <path id="Path_268" data-name="Path 268" d="M17702.658,341.5h7.041l-.031-21.33h-12V307.46h-13.541v7.229" transform="translate(-16247.628 401.802)" fill="none" stroke="#a638f6" stroke-linejoin="round" stroke-width="3"/>
-          <path id="Path_270" data-name="Path 270" d="M18009.23,292.46l11.969,12.76" transform="translate(-16559.133 416.802)" fill="none" stroke="#a638f6" stroke-linejoin="round" stroke-width="3"/>
+            <path id="Path_267" data-name="Path 267" d="M17657.32,370.466h18.391v6.666h-25.152V343.97h6.762v26.5Z" transform="translate(-16220.861 372.69)" fill="none" stroke="#a638f6" stroke-linejoin="round" stroke-width="3"/>
+            <path id="Path_268" data-name="Path 268" d="M17702.658,341.5h7.041l-.031-21.33h-12V307.46h-13.541v7.229" transform="translate(-16247.628 401.802)" fill="none" stroke="#a638f6" stroke-linejoin="round" stroke-width="3"/>
+            <path id="Path_270" data-name="Path 270" d="M18009.23,292.46l11.969,12.76" transform="translate(-16559.133 416.802)" fill="none" stroke="#a638f6" stroke-linejoin="round" stroke-width="3"/>
           </g>
         </svg>
-    </div>
-    <div class="container2">
-      <div class="password-length">
-        <div>Character Length: <span id="slider-value">1</span></div> 
-        <div class="slidecontainer">
-          <input type="range" min="1" max="20" value="1" class="slider" id="myRange">
-        </div>
-        <form action="/action_page.php">
-         
-        </form>
+        <div id="copy-message" class="copy-message hidden">Lösenord kopierat till urklipp!</div>
       </div>
-        <input type="checkbox" id="include-uppercase" name="inc-uppercase" value="uppercase">
-        <label for="vehicle1">Include Uppercase Letters</label><br><br>
-        <input type="checkbox" id="include-lowercase" name="inc-lowercase" value="lowercase">
-        <label for="vehicle2">Include Lowercase Letters</label><br><br>
-        <input type="checkbox" id="include-numbers" name="inc-numbers" value="numbers">
-        <label for="vehicle3">Include Numbers</label><br><br>
-        <input type="checkbox" id="include-symbols" name="inc-symbols" value="symbols">
-        <label for="vehicle3">Include Symbols</label><br><br>
+      <div class="container2">
+        <div class="password-length">
+          <div>Character Length: </div> 
+          <div id="slider-value">1</div>
+        </div>
+          <div class="slidecontainer">
+            <input type="range" min="1" max="20" value="1" class="slider" id="myRange">
+          </div>
         
+        <input type="checkbox" id="include-uppercase" name="inc-uppercase" value="uppercase">
+        <label for="include-uppercase">Include Uppercase Letters</label><br><br>
+        <input type="checkbox" id="include-lowercase" name="inc-lowercase" value="lowercase">
+        <label for="include-lowercase">Include Lowercase Letters</label><br><br>
+        <input type="checkbox" id="include-numbers" name="inc-numbers" value="numbers">
+        <label for="include-numbers">Include Numbers</label><br><br>
+        <input type="checkbox" id="include-symbols" name="inc-symbols" value="symbols">
+        <label for="include-symbols">Include Symbols</label><br><br>
         <div class="strength-box">
           <div id="strength">Strength</div> 
           <div class="strength-meter-boxes">
             <div id="strength-text">Medium</div>
-            <div id="box-1"></div> 
-            <div id="box-2"></div>
-            <div id="box-3"></div>
-            <div id="box-4"></div> 
+            <div id="boxes">
+              <div id="box-1"></div> 
+              <div id="box-2"></div>
+              <div id="box-3"></div>
+              <div id="box-4"></div> 
+            </div> 
           </div>  
+        </div>
+        <button id="generate-password">Generate</button>
       </div>
-      <button>Generate</button>
     </div>
-    </div> 
-  <img id="logo"src="/images/techover-logo.png" alt="Techover Logo" />
-  </div>
-  
+    <img id="logo" src="techover-logo.png" alt="Techover Logo" />
   </body>
+  <script src="index.js"></script>
 </html>
