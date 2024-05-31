@@ -50,6 +50,9 @@ generateButton.addEventListener("click", function () {
   const passwordLength = parseInt(slider.value);
   const password = generatePassword(passwordLength, tillgangligaTecken);
   generatedPasswordDiv.textContent = password;
+
+  // Update password strength
+  updatePasswordStrength(password);
 });
 
 function generatePassword(length, characters) {
@@ -64,6 +67,43 @@ function generatePassword(length, characters) {
   return password;
 }
 
+function updatePasswordStrength(password) {
+  const strengthBoxes = [
+    document.getElementById('box-1'),
+    document.getElementById('box-2'),
+    document.getElementById('box-3'),
+    document.getElementById('box-4')
+  ];
+  const strengthText = document.getElementById('strength-text');
+
+  let strength = 0;
+
+  if (password.length >= 8) strength++;
+  if (/[A-Z]/.test(password)) strength++;
+  if (/[a-z]/.test(password)) strength++;
+  if (/[0-9]/.test(password)) strength++;
+  if (/[^A-Za-z0-9]/.test(password)) strength++;
+
+  strengthBoxes.forEach((box, index) => {
+    if (index < strength) {
+      box.style.backgroundColor = 'green';
+    } else {
+      box.style.backgroundColor = 'white';
+    }
+  });
+
+  if (strength <= 1) {
+    strengthText.textContent = 'Very Weak';
+  } else if (strength == 2) {
+    strengthText.textContent = 'Weak';
+  } else if (strength == 3) {
+    strengthText.textContent = 'Medium';
+  } else if (strength == 4) {
+    strengthText.textContent = 'Strong';
+  } else {
+    strengthText.textContent = 'Very Strong';
+  }
+}
 
 // Här är din befintliga kod...
 
