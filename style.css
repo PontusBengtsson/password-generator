@@ -5,8 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
-    
+    font-family: 'Rowdies', sans-serif;
 }
 
 svg {
@@ -16,6 +15,7 @@ svg {
 input {
     cursor: pointer;
 }
+
 .container {
     display: flex;
     justify-content: center;
@@ -24,13 +24,12 @@ input {
     width: 20%;
     gap: 20px;
     padding: 30px;
-    
 }   
 
 .password {
     display: flex;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
     border: 1px solid black;
     padding: 20px;
     background-color: #2D2039;
@@ -38,46 +37,46 @@ input {
 }
 
 .container2 {
-    width:100%;
+    width: 100%;
     background-color: #2D2039;
     padding: 20px;
-    
+    gap: 20px;
 }
+
 .password-length {
-    width:100%;
+    width: 100%;
     background-color: #2D2039;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: row;    
 }
- 
-  .slider {
+
+.slider {
     width: 100%; 
     color: #A638F6;
     margin: 10px 0px;
     cursor: pointer;
-  }
+}
 
-  #slider-value {
+#slider-value {
     color: #A638F6;
     font-size: 30px;
-    font-weight: 600;
-  }
+    font-weight: 700;
+}
 
-  #strength {
+#strength {
     color: #16111A;
-  }
+}
 
 .strength-box {
-    
     background-color: #A638F6;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;   
     align-items: center;
-    gap:10px;
+    gap: 10px;
 }
 
 .strength-meter-boxes {
@@ -85,48 +84,34 @@ input {
     flex-direction: row;
     align-items: center;
     padding: 10px;
-    gap:5px;
+    gap: 5px;
     background-color: transparent;
     border: #16111A;
+    font-weight: 700;
+    font-size: medium;
 }
 
 #boxes {
     display: flex;
     flex-direction: row;
-    gap:5px;
+    gap: 5px;
 }
 
-#box-1 {
+#box-1, #box-2, #box-3, #box-4 {
     border: #16111A;
-    padding:10px 5px;
+    padding: 10px 5px;
     border: 5px solid white;
 }
-
-#box-2 {
-    border: #16111A;
-    padding:10px 5px;
-    border: 5px solid white;
-}
-#box-3 {
-    border: #16111A;
-    padding:10px 5px;
-    border: 5px solid white;
-}
-#box-4 {
-    border: #16111A;
-    padding:10px 5px;
-    border: 5px solid white;
-}
-
-
 
 button {
     background-color: #A638F6;
     width: 100%;
     color: white;
     border: none;
-    padding: 10px;
-    margin-top: 20px ;
+    padding: 20px;
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: medium;
 }
 
 button:hover {
@@ -135,8 +120,9 @@ button:hover {
 }
 
 .logo {
-    gap:10px;
+    gap: 10px;
 }
+
 .copy-message {
     position: fixed;
     top: 50%;
@@ -148,9 +134,24 @@ button:hover {
     border-radius: 5px;
     z-index: 999;
     transition: opacity 0.3s ease-in-out;
-  }
-  
-  .hidden {
+}
+
+.hidden {
     opacity: 0;
     pointer-events: none;
-  }
+}
+
+.rowdies-light {
+    font-family: "Rowdies", sans-serif;
+    font-weight: 300;
+}
+
+.rowdies-regular {
+    font-family: "Rowdies", sans-serif;
+    font-weight: 400;
+}
+
+.rowdies-bold {
+    font-family: "Rowdies", sans-serif;
+    font-weight: 700;
+}
