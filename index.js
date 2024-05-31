@@ -86,7 +86,7 @@ function updatePasswordStrength(password) {
 
   strengthBoxes.forEach((box, index) => {
     if (index < strength) {
-      box.style.backgroundColor = 'green';
+      box.style.backgroundColor = '#4ABEA0';
     } else {
       box.style.backgroundColor = 'white';
     }
