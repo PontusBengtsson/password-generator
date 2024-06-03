@@ -33,16 +33,25 @@
       <div class="slide-container">
         <input type="range" min="1" max="20" value="1" class="slider" id="myRange">
       </div>
-      <div id="container3">
-      <input type="checkbox" id="include-uppercase" name="inc-uppercase" value="uppercase">
-      <label for="include-uppercase">Include Uppercase Letters</label><br><br>
-      <input type="checkbox" id="include-lowercase" name="inc-lowercase" value="lowercase">
-      <label for="include-lowercase">Include Lowercase Letters</label><br><br>
-      <input type="checkbox" id="include-numbers" name="inc-numbers" value="numbers">
-      <label for="include-numbers">Include Numbers</label><br><br>
-      <input type="checkbox" id="include-symbols" name="inc-symbols" value="symbols">
-      <label for="include-symbols">Include Symbols</label><br><br>
+        <div id="container3">
+          <label class="checkbox-label">
+              <input type="checkbox" id="include-uppercase" name="inc-uppercase" value="uppercase">
+              <span>Include Uppercase Letters</span>
+          </label><br><br>
+          <label class="checkbox-label">
+              <input type="checkbox" id="include-lowercase" name="inc-lowercase" value="lowercase">
+              <span>Include Lowercase Letters</span>
+          </label><br><br>
+          <label class="checkbox-label">
+              <input type="checkbox" id="include-numbers" name="inc-numbers" value="numbers">
+              <span>Include Numbers</span>
+          </label><br><br>
+          <label class="checkbox-label">
+              <input type="checkbox" id="include-symbols" name="inc-symbols" value="symbols">
+              <span>Include Symbols</span>
+          </label><br><br>
       </div>
+      
       <div class="strength-box">
         <div id="strength">Strength</div> 
         <div class="strength-meter-boxes">
@@ -56,7 +65,7 @@
         </div>  
       </div>
       <button id="generate-password">Generate</button>
-    </div>
+    
   </div>
   <img id="logo" src="techover-logo.png" alt="Techover Logo" />
 </body>
