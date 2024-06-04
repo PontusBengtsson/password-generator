@@ -1,12 +1,16 @@
-const slider = document.getElementById("myRange");
+const slider = document.getElementById("range1");
 const sliderValue = document.getElementById("slider-value");
+
+slider.addEventListener("input", (event) => {
+  const tempSliderValue = event.target.value;
+  sliderValue.textContent = tempSliderValue;
+  
+  const progress = (tempSliderValue / slider.max) * 100;
+  slider.style.background = `linear-gradient(to right, #f50 ${progress}%, #ccc ${progress}%)`;
+});
+
 const generatedPasswordDiv = document.getElementById("generated-password");
 const generateButton = document.getElementById("generate-password");
-
-// Update the current slider value (displayed next to "Character Length")
-slider.addEventListener("input", function () {
-  sliderValue.textContent = this.value;
-});
 
 generateButton.addEventListener("click", function () {
   console.log("Button clicked");
@@ -21,10 +25,10 @@ generateButton.addEventListener("click", function () {
   const inkluderaSpecialtecken = inkluderaSpecialteckenCheckbox.checked;
 
   let tillgangligaTecken = '';
-  let gemener = 'abcdefghijklmnopqrstuvwxyz';
-  let versaler = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  let siffror = '0123456789';
-  let specialtecken = '!@#$%^&*()_+{}|:<>?-=[];,./';
+  const gemener = 'abcdefghijklmnopqrstuvwxyz';
+  const versaler = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const siffror = '0123456789';
+  const specialtecken = '!@#$%^&*()_+{}|:<>?-=[];,./';
 
   if (!inkluderaVersaler && !inkluderaGemener && !inkluderaSiffror && !inkluderaSpecialtecken) {
     alert('Vänligen välj minst ett alternativ för att generera lösenord.');
