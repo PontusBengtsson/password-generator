@@ -9,6 +9,7 @@ body {
     padding: 20px; /* Add padding for smaller screens */
     margin: 0;
     box-sizing: border-box;
+    height: 100vh;
 }
 
 svg {
@@ -237,7 +238,7 @@ button:hover {
 }
 
 .copy-message {
-    position: fixed;
+    position: absolute; /* Change from fixed to absolute */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -248,6 +249,7 @@ button:hover {
     z-index: 999;
     transition: opacity 0.3s ease-in-out;
 }
+
 
 .hidden {
     opacity: 0;
@@ -277,18 +279,19 @@ button:hover {
     }
     .container {
         width: 100%;
+        gap:15px;
     }
 
     .container2 {
-        gap:0px;
+        gap:10px;
     }
 
     .strength-box{
-    height: 100px;
+    height: 60px;
     }
 
-    button {
-        height: ; /* Ensure it scales with content */
+    .generated-password{
+        font-size: 16px;
     }
 
     .password {
@@ -304,8 +307,21 @@ button:hover {
     }
 
     .strength-meter-boxes {
-        flex-direction: column;
+        flex-direction: row; /* Ändrad till rad layout */
         gap: 5px;
+        font-size: smaller; /* Mindre textstorlek för boxes */
+    }
+
+    #boxes {
+        gap: 3px; /* Minska avståndet mellan boxarna */
+    }
+
+    #box-1, #box-2, #box-3, #box-4 {
+        padding: 10px 5px; /* Minska padding för boxarna */
+    }
+
+    #strength {
+        font-size: smaller; /* Mindre textstorlek för strength-text */
     }
 
     .checkbox-label {
@@ -316,3 +332,4 @@ button:hover {
         width: 100px;
     }
 }
+
