@@ -67,7 +67,7 @@ input {
 
 #slider-value {
     color: #A638F6;
-    font-size: 1.5em; /* Use relative units */
+    font-size: 4em; /* Use relative units */
     font-weight: 700;
 }
 
@@ -172,49 +172,65 @@ button:hover {
     vertical-align: middle; /* Centrera texten vertikalt i linje med checkboxen */
 }
 
-#range1 {
-    -webkit-appearance: none;
-    appearance: none; 
+.label {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
+  }
+  
+  #range1 {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%; /* Full width of the container */
+    height: 8px;
+    background: linear-gradient(to right, #A638F6 0%, #2e233d 0%);
     cursor: pointer;
+    border-radius: 5px;
     outline: none;
-    overflow: hidden;
-    border-radius: 16px;
+    transition: background 0.3s ease-in-out;
   }
   
   #range1::-webkit-slider-runnable-track {
-    height: 15px;
-    background: #ccc;
-    border-radius: 16px;
+    height: 8px;
+    background: transparent;
   }
   
   #range1::-moz-range-track {
-    height: 15px;
-    background: #ccc;
-    border-radius: 16px;
+    height: 8px;
+    background: transparent;
   }
   
   #range1::-webkit-slider-thumb {
     -webkit-appearance: none;
-    appearance: none; 
-    height: 15px;
-    width: 15px;
+    appearance: none;
+    width: 20px;
+    height: 20px;
     background-color: #fff;
     border-radius: 50%;
-    border: 2px solid #fff;
-    box-shadow: -407px 0 0 400px #A638F6;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    margin-top: -6px; /* Centers the thumb */
   }
   
   #range1::-moz-range-thumb {
-    height: 15px;
-    width: 15px;
+    width: 20px;
+    height: 20px;
     background-color: #fff;
     border-radius: 50%;
-    border: 1px solid #fff;
-    box-shadow: -407px 0 0 400px #A638F6;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
   }
   
-  
+  #slider-value {
+    font-size: 1.2em;
+    color: #A638F6;
+    margin-left: 10px; /* Space between slider and value */
+  }
+
 
 .logo {
     gap: 10px;

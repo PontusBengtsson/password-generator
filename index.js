@@ -1,13 +1,15 @@
-const slider = document.getElementById("range1");
-const sliderValue = document.getElementById("slider-value");
+const slider = document.getElementById('range1');
+const sliderValue = document.getElementById('slider-value');
 
-slider.addEventListener("input", (event) => {
-  const tempSliderValue = event.target.value;
-  sliderValue.textContent = tempSliderValue;
-  
-  const progress = (tempSliderValue / slider.max) * 100;
-  slider.style.background = `linear-gradient(to right, #f50 ${progress}%, #ccc ${progress}%)`;
+// Uppdaterad händelselyssnare för slidern
+slider.addEventListener('input', function() {
+  const value = (this.value - this.min) / (this.max - this.min) * 100;
+  this.style.background = `linear-gradient(to right, #A638F6 ${value}%, #2e233d ${value}%)`;
+  sliderValue.textContent = this.value;
 });
+
+// Uppdatera sliderns värde vid start
+slider.value = 1;
 
 const generatedPasswordDiv = document.getElementById("generated-password");
 const generateButton = document.getElementById("generate-password");
