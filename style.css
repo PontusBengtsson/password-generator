@@ -271,13 +271,24 @@ button:hover {
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
+
+    body {
+        height:100vh;
+    }
     .container {
         width: 100%;
     }
 
-    .strength-box,
+    .container2 {
+        gap:0px;
+    }
+
+    .strength-box{
+    height: 100px;
+    }
+
     button {
-        height: auto; /* Ensure it scales with content */
+        height: ; /* Ensure it scales with content */
     }
 
     .password {
@@ -299,5 +310,9 @@ button:hover {
 
     .checkbox-label {
         font-size: 0.9em; /* Adjust font size for smaller screens */
+    }
+
+    img {
+        width: 100px;
     }
 }
