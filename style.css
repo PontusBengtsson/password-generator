@@ -10,6 +10,11 @@ body {
     margin: 0;
     box-sizing: border-box;
     height: 100vh;
+    gap:10px;
+}
+
+img {
+    width: 200px;
 }
 
 svg {
@@ -39,13 +44,13 @@ input {
     border: 1px solid black;
     padding: 20px;
     background-color: #2D2039;
-    width: 100%;
+    width: 80%;
 }
 
 .container2 {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 80%;
     background-color: #2D2039;
     padding: 20px;
     gap: 30px;
@@ -77,12 +82,7 @@ input {
 }
 
 
-/* .container3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-} */
+
 
 
 .strength-box {
@@ -92,7 +92,6 @@ input {
     flex-direction: row;
     justify-content: space-around;   
     align-items: center;
-    padding: 20px;
     font-weight: 700;
     font-size: medium;
     box-sizing: border-box; /* Ensures padding and border are included in the width */
@@ -148,7 +147,20 @@ button.clicked {
     background-color: #A638F6; /* Återställ till grundfärgen när knappen klickas på */
 }
 
+.container3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:10px;
+    
+}
 
+.checkbox-label {
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    align-items: center;
+}
 
 /* Stil för checkboxarna */
 .checkbox-label input[type="checkbox"] {
@@ -157,7 +169,6 @@ button.clicked {
     appearance: none;
     width: 20px;
     height: 20px;
-    margin-right: 10px; /* Avstånd mellan checkbox och text */
     border: 2px solid white; /* Färg på checkboxens ram */
     background-color: transparent; /* Bakgrundsfärg för checkboxen */
     cursor: pointer; /* Visa pekare vid hovring */
@@ -253,9 +264,7 @@ button.clicked {
   }
 
 
-.logo {
-    gap: 10px;
-}
+
 
 .copy-message {
     position: absolute; /* Change from fixed to absolute */
@@ -325,6 +334,7 @@ button.clicked {
     }
 
     .container2 {
+        width: 100%;
         gap:10px;
     }
 
@@ -371,7 +381,7 @@ button.clicked {
     }
 
     img {
-        width: 100px;
+        width: 130px;
     }
     #message {
         top:2vh;
