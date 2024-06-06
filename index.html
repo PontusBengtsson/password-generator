@@ -12,7 +12,9 @@
   <title>LösenordsGenerator</title>
 </head>
 <body>
+  <div id="message" class="hidden"></div>
   <div class="container">
+    
     <div>Password Generator</div>
     <div class="password">
       <div id="generated-password"></div>
@@ -33,7 +35,7 @@
       <div class="slider-container">
         <input type="range" id="range1" min="1" max="20" value="10" />
       </div>
-        <div id="container3">
+        <div class="container3">
           <label class="checkbox-label">
               <input type="checkbox" id="include-uppercase" name="inc-uppercase" value="uppercase">
               <span>Include Uppercase Letters</span>
@@ -65,8 +67,6 @@
         </div>  
       </div>
       <button id="generate-password">Generate</button>
-   
-    
   </div>
   <img id="logo" src="techover-logo.png" alt="Techover Logo" />
 </body>

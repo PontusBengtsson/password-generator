@@ -1,9 +1,9 @@
-const slider = document.getElementById('range1');
-const sliderValue = document.getElementById('slider-value');
+const slider = document.getElementById("range1");
+const sliderValue = document.getElementById("slider-value");
 
 // Uppdaterad händelselyssnare för slidern
-slider.addEventListener('input', function() {
-  const value = (this.value - this.min) / (this.max - this.min) * 100;
+slider.addEventListener("input", function () {
+  const value = ((this.value - this.min) / (this.max - this.min)) * 100;
   this.style.background = `linear-gradient(to right, #A638F6 ${value}%, #2e233d ${value}%)`;
   sliderValue.textContent = this.value;
 });
@@ -14,26 +14,66 @@ slider.value = 1;
 const generatedPasswordDiv = document.getElementById("generated-password");
 const generateButton = document.getElementById("generate-password");
 
-generateButton.addEventListener("click", function () {
-  console.log("Button clicked");
-  const inkluderaVersalerCheckbox = document.getElementById('include-uppercase');
-  const inkluderaGemenerCheckbox = document.getElementById('include-lowercase');
-  const inkluderaSiffrorCheckbox = document.getElementById('include-numbers');
-  const inkluderaSpecialteckenCheckbox = document.getElementById('include-symbols');
+// Funktion för att uppdatera meddelandets synlighet
+function uppdateraMeddelandeSynlighet() {
+  const inkluderaVersalerCheckbox = document.getElementById("include-uppercase");
+  const inkluderaGemenerCheckbox = document.getElementById("include-lowercase");
+  const inkluderaSiffrorCheckbox = document.getElementById("include-numbers");
+  const inkluderaSpecialteckenCheckbox = document.getElementById("include-symbols");
 
   const inkluderaVersaler = inkluderaVersalerCheckbox.checked;
   const inkluderaGemener = inkluderaGemenerCheckbox.checked;
   const inkluderaSiffror = inkluderaSiffrorCheckbox.checked;
   const inkluderaSpecialtecken = inkluderaSpecialteckenCheckbox.checked;
 
-  let tillgangligaTecken = '';
-  const gemener = 'abcdefghijklmnopqrstuvwxyz';
-  const versaler = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  const siffror = '0123456789';
-  const specialtecken = '!@#$%^&*()_+{}|:<>?-=[];,./';
+  const messageDiv = document.getElementById("message");
 
-  if (!inkluderaVersaler && !inkluderaGemener && !inkluderaSiffror && !inkluderaSpecialtecken) {
-    alert('Vänligen välj minst ett alternativ för att generera lösenord.');
+  if (
+    !inkluderaVersaler &&
+    !inkluderaGemener &&
+    !inkluderaSiffror &&
+    !inkluderaSpecialtecken
+  ) {
+    messageDiv.textContent = "Please choose an option to generate password.";
+    messageDiv.classList.remove("hidden");
+    messageDiv.style.display = "block";
+  } else {
+    messageDiv.classList.add("hidden");
+    messageDiv.style.display = "none";
+  }
+}
+
+generateButton.addEventListener("click", function () {
+  this.classList.add("clicked"); // Lägg till klassen "clicked" när knappen klickas på
+  setTimeout(() => {
+    this.classList.remove("clicked"); // Ta bort klassen efter en liten fördröjning
+  }, 100); // Justera fördröjningen efter behov
+
+  // Uppdatera meddelandets synlighet
+  uppdateraMeddelandeSynlighet();
+
+  const inkluderaVersalerCheckbox = document.getElementById("include-uppercase");
+  const inkluderaGemenerCheckbox = document.getElementById("include-lowercase");
+  const inkluderaSiffrorCheckbox = document.getElementById("include-numbers");
+  const inkluderaSpecialteckenCheckbox = document.getElementById("include-symbols");
+
+  const inkluderaVersaler = inkluderaVersalerCheckbox.checked;
+  const inkluderaGemener = inkluderaGemenerCheckbox.checked;
+  const inkluderaSiffror = inkluderaSiffrorCheckbox.checked;
+  const inkluderaSpecialtecken = inkluderaSpecialteckenCheckbox.checked;
+
+  let tillgangligaTecken = "";
+  const gemener = "abcdefghijklmnopqrstuvwxyz";
+  const versaler = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const siffror = "0123456789";
+  const specialtecken = "!@#$%^&*()_+{}|:<>?-=[];,./";
+
+  if (
+    !inkluderaVersaler &&
+    !inkluderaGemener &&
+    !inkluderaSiffror &&
+    !inkluderaSpecialtecken
+  ) {
     return;
   }
 
@@ -61,8 +101,16 @@ generateButton.addEventListener("click", function () {
   updatePasswordStrength(password);
 });
 
+// Lägg till en lyssnare för varje checkbox för att uppdatera meddelandets synlighet när de ändras
+const checkboxar = document.querySelectorAll('input[type="checkbox"]');
+checkboxar.forEach(checkbox => {
+  checkbox.addEventListener('change', uppdateraMeddelandeSynlighet);
+});
+
+
+
 function generatePassword(length, characters) {
-  let password = '';
+  let password = "";
   const charactersLength = characters.length;
 
   for (let i = 0; i < length; i++) {
@@ -75,12 +123,12 @@ function generatePassword(length, characters) {
 
 function updatePasswordStrength(password) {
   const strengthBoxes = [
-    document.getElementById('box-1'),
-    document.getElementById('box-2'),
-    document.getElementById('box-3'),
-    document.getElementById('box-4')
+    document.getElementById("box-1"),
+    document.getElementById("box-2"),
+    document.getElementById("box-3"),
+    document.getElementById("box-4"),
   ];
-  const strengthText = document.getElementById('strength-text');
+  const strengthText = document.getElementById("strength-text");
 
   let strength = 0;
 
@@ -92,48 +140,47 @@ function updatePasswordStrength(password) {
 
   strengthBoxes.forEach((box, index) => {
     if (index < strength) {
-      box.style.backgroundColor = '#4ABEA0';
+      box.style.backgroundColor = "#4ABEA0";
     } else {
-      box.style.backgroundColor = 'white';
+      box.style.backgroundColor = "white";
     }
   });
 
   if (strength <= 1) {
-    strengthText.textContent = 'Very Weak';
+    strengthText.textContent = "Very Weak";
   } else if (strength == 2) {
-    strengthText.textContent = 'Weak';
+    strengthText.textContent = "Weak";
   } else if (strength == 3) {
-    strengthText.textContent = 'Medium';
+    strengthText.textContent = "Medium";
   } else if (strength == 4) {
-    strengthText.textContent = 'Strong';
+    strengthText.textContent = "Strong";
   } else {
-    strengthText.textContent = 'Very Strong';
+    strengthText.textContent = "Very Strong";
   }
 }
 
-// Här är din befintliga kod...
-
 // Händelselyssnare för SVG-klick
-document.querySelector('svg').addEventListener('click', function() {
+document.querySelector("svg").addEventListener("click", function () {
   // Hämta texten från #generated-password
-  const generatedPassword = document.getElementById('generated-password').textContent;
+  const generatedPassword =
+    document.getElementById("generated-password").textContent;
 
   // Skapa ett temporärt input-element för att kopiera texten till urklipp
-  const tempInput = document.createElement('input');
+  const tempInput = document.createElement("input");
   tempInput.value = generatedPassword;
   document.body.appendChild(tempInput);
 
   // Markera texten och kopiera den till urklipp
   tempInput.select();
-  document.execCommand('copy');
+  document.execCommand("copy");
 
   // Ta bort temporärt input-element
   document.body.removeChild(tempInput);
 
   // Visa en meddelanderuta för användaren
-  const copyMessage = document.getElementById('copy-message');
-  copyMessage.classList.remove('hidden');
-  setTimeout(function() {
-    copyMessage.classList.add('hidden');
+  const copyMessage = document.getElementById("copy-message");
+  copyMessage.classList.remove("hidden");
+  setTimeout(function () {
+    copyMessage.classList.add("hidden");
   }, 2000); // Dölj meddelanderutan efter 2 sekunder
 });

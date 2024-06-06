@@ -76,6 +76,15 @@ input {
     color: #16111A;
 }
 
+
+/* .container3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+} */
+
+
 .strength-box {
     background-color: #A638F6;
     width: 100%;
@@ -121,14 +130,25 @@ button {
     padding: 20px;
     font-weight: 700;
     font-size: medium;
-    box-sizing: border-box; /* Ensures padding and border are included in the width */
-    height: 60px; /* Ensure height is the same */
+    box-sizing: border-box; /* Säkerställer att padding och border inkluderas i bredden */
+    height: 60px; /* Säkerställer samma höjd */
+    cursor: pointer; /* Ändra markörens ikon till en hand */
+    transition: background-color 0.3s ease; /* Gör övergången för bakgrundsfärgen jämn */
 }
 
 button:hover {
     background-color: #16111A;
-    cursor: pointer;
 }
+
+button:active {
+    background-color: #A638F6; /* Återställ till grundfärgen när knappen klickas på */
+}
+
+button.clicked {
+    background-color: #A638F6; /* Återställ till grundfärgen när knappen klickas på */
+}
+
+
 
 /* Stil för checkboxarna */
 .checkbox-label input[type="checkbox"] {
@@ -252,9 +272,31 @@ button:hover {
 
 
 .hidden {
+ 
+    visibility: hidden;
     opacity: 0;
     pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+
+
+
+#message {
+  color: #A638F6;
+  display: none;
+  font-size: smaller;
+  position: absolute;
+  top:5vh;
+  
 }
+  
+  .visible {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity 0.3s ease-in-out;
+  }
 
 .rowdies-light {
     font-family: "Rowdies", sans-serif;
@@ -331,5 +373,9 @@ button:hover {
     img {
         width: 100px;
     }
+    #message {
+        top:2vh;
+        
+      }
 }
 
