@@ -129,26 +129,35 @@ function updatePasswordStrength(password) {
   if (/[0-9]/.test(password)) strength++;
   if (/[^A-Za-z0-9]/.test(password)) strength++;
 
-  strengthBoxes.forEach((box, index) => {
-    if (index < strength) {
-      box.style.backgroundColor = "#4ABEA0";
-    } else {
-      box.style.backgroundColor = "white";
-    }
-  });
+  let color = "#4ABEA0"; // Default color for strong and very strong
+  let strengthLabel = "Very Strong";
 
   if (strength <= 1) {
-    strengthText.textContent = "Very Weak";
-  } else if (strength == 2) {
-    strengthText.textContent = "Weak";
-  } else if (strength == 3) {
-    strengthText.textContent = "Medium";
-  } else if (strength == 4) {
-    strengthText.textContent = "Strong";
-  } else {
-    strengthText.textContent = "Very Strong";
+    strengthLabel = "Very Weak";
+    color = "#FFA257";
+  } else if (strength === 2) {
+    strengthLabel = "Weak";
+    color = "#FFA257";
+  } else if (strength === 3) {
+    strengthLabel = "Medium";
+    color = "#FFA257";
+  } else if (strength === 4) {
+    strengthLabel = "Strong";
+    color = "#4ABEA0";
   }
+
+  strengthText.textContent = strengthLabel;
+
+  strengthBoxes.forEach((box, index) => {
+    if (index < strength) {
+      box.style.backgroundColor = color;
+    } else {
+      box.style.backgroundColor = "transparent";
+    }
+  });
 }
+
+
 
 function showMessage(message) {
   const messageDiv = document.getElementById("message");
