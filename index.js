@@ -1,25 +1,24 @@
 const slider = document.getElementById("range1");
 const sliderValue = document.getElementById("slider-value");
 
-// Uppdaterad händelselyssnare för slidern
 slider.addEventListener("input", function () {
   const value = ((this.value - this.min) / (this.max - this.min)) * 100;
   this.style.background = `linear-gradient(to right, #A638F6 ${value}%, #2e233d ${value}%)`;
   sliderValue.textContent = this.value;
 });
 
-// Uppdatera sliderns värde vid start
 slider.value = 1;
 
 const generatedPasswordDiv = document.getElementById("generated-password");
 const generateButton = document.getElementById("generate-password");
 
-// Funktion för att uppdatera meddelandets synlighet
 function uppdateraMeddelandeSynlighet() {
-  const inkluderaVersalerCheckbox = document.getElementById("include-uppercase");
+  const inkluderaVersalerCheckbox =
+    document.getElementById("include-uppercase");
   const inkluderaGemenerCheckbox = document.getElementById("include-lowercase");
   const inkluderaSiffrorCheckbox = document.getElementById("include-numbers");
-  const inkluderaSpecialteckenCheckbox = document.getElementById("include-symbols");
+  const inkluderaSpecialteckenCheckbox =
+    document.getElementById("include-symbols");
 
   const inkluderaVersaler = inkluderaVersalerCheckbox.checked;
   const inkluderaGemener = inkluderaGemenerCheckbox.checked;
@@ -39,18 +38,19 @@ function uppdateraMeddelandeSynlighet() {
 }
 
 generateButton.addEventListener("click", function () {
-  this.classList.add("clicked"); // Lägg till klassen "clicked" när knappen klickas på
+  this.classList.add("clicked");
   setTimeout(() => {
-    this.classList.remove("clicked"); // Ta bort klassen efter en liten fördröjning
-  }, 100); // Justera fördröjningen efter behov
+    this.classList.remove("clicked");
+  }, 100);
 
-  // Uppdatera meddelandets synlighet
   uppdateraMeddelandeSynlighet();
 
-  const inkluderaVersalerCheckbox = document.getElementById("include-uppercase");
+  const inkluderaVersalerCheckbox =
+    document.getElementById("include-uppercase");
   const inkluderaGemenerCheckbox = document.getElementById("include-lowercase");
   const inkluderaSiffrorCheckbox = document.getElementById("include-numbers");
-  const inkluderaSpecialteckenCheckbox = document.getElementById("include-symbols");
+  const inkluderaSpecialteckenCheckbox =
+    document.getElementById("include-symbols");
 
   const inkluderaVersaler = inkluderaVersalerCheckbox.checked;
   const inkluderaGemener = inkluderaGemenerCheckbox.checked;
@@ -92,14 +92,12 @@ generateButton.addEventListener("click", function () {
   const password = generatePassword(passwordLength, tillgangligaTecken);
   generatedPasswordDiv.textContent = password;
 
-  // Update password strength
   updatePasswordStrength(password);
 });
 
-// Lägg till en lyssnare för varje checkbox för att uppdatera meddelandets synlighet när de ändras
 const checkboxar = document.querySelectorAll('input[type="checkbox"]');
-checkboxar.forEach(checkbox => {
-  checkbox.addEventListener('change', uppdateraMeddelandeSynlighet);
+checkboxar.forEach((checkbox) => {
+  checkbox.addEventListener("change", uppdateraMeddelandeSynlighet);
 });
 
 function generatePassword(length, characters) {
@@ -152,7 +150,6 @@ function updatePasswordStrength(password) {
   }
 }
 
-// Funktion för att visa ett meddelande
 function showMessage(message) {
   const messageDiv = document.getElementById("message");
   messageDiv.textContent = message;
@@ -160,16 +157,13 @@ function showMessage(message) {
   messageDiv.style.display = "block";
 }
 
-// Funktion för att dölja meddelandet
 function hideMessage() {
   const messageDiv = document.getElementById("message");
   messageDiv.classList.add("hidden");
   messageDiv.style.display = "none";
 }
 
-// Händelselyssnare för SVG-klick
 document.querySelector("svg").addEventListener("click", function () {
-  // Hämta texten från #generated-password
   const generatedPassword =
     document.getElementById("generated-password").textContent;
 
@@ -178,18 +172,14 @@ document.querySelector("svg").addEventListener("click", function () {
     return;
   }
 
-  // Skapa ett temporärt input-element för att kopiera texten till urklipp
   const tempInput = document.createElement("input");
   tempInput.value = generatedPassword;
   document.body.appendChild(tempInput);
 
-  // Markera texten och kopiera den till urklipp
   tempInput.select();
   document.execCommand("copy");
 
-  // Ta bort temporärt input-element
   document.body.removeChild(tempInput);
 
-  // Visa en meddelanderuta för användaren
   showMessage("Password copied to clipboard.");
 });

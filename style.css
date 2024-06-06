@@ -1,392 +1,381 @@
 body {
-    background-color: #16111A;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: 'Rowdies', sans-serif;
-    padding: 20px; /* Add padding for smaller screens */
-    margin: 0;
-    box-sizing: border-box;
-    height: 100vh;
-    gap:10px;
+  background-color: #16111a;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Rowdies", sans-serif;
+  padding: 20px;
+  margin: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  gap: 10px;
 }
 
 img {
-    width: 200px;
+  width: 200px;
 }
 
 svg {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 input {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;   
-    width: 80%; /* Adjusted for responsiveness */
-    max-width: 500px; /* Ensure it doesn't get too wide */
-    gap: 20px;
-    padding: 20px; /* Reduced padding for smaller screens */
-    box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+  max-width: 500px;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .password {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: 1px solid black;
-    padding: 20px;
-    background-color: #2D2039;
-    width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid black;
+  padding: 20px;
+  background-color: #2d2039;
+  width: 80%;
 }
 
 .container2 {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    background-color: #2D2039;
-    padding: 20px;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  background-color: #2d2039;
+  padding: 20px;
+  gap: 20px;
 }
 
 .password-length {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;    
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 .slider {
-    width: 100%; 
-    color: #A638F6;
-    margin: 10px 0px;
-    cursor: pointer;
+  width: 100%;
+  color: #a638f6;
+  margin: 10px 0px;
+  cursor: pointer;
 }
 
 #slider-value {
-    color: #A638F6;
-    font-size: 4em; /* Use relative units */
-    font-weight: 700;
+  color: #a638f6;
+  font-size: 4em;
+  font-weight: 700;
 }
 
 #strength {
-    color: #16111A;
+  color: #16111a;
 }
 
-
-
-
-
 .strength-box {
-    background-color: #A638F6;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;   
-    align-items: center;
-    font-weight: 700;
-    font-size: medium;
-    box-sizing: border-box; /* Ensures padding and border are included in the width */
-    height: 60px; /* Ensure height is the same */
+  background-color: #a638f6;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: 700;
+  font-size: medium;
+  box-sizing: border-box;
+  height: 60px;
 }
 
 .strength-meter-boxes {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 15px;
-    background-color: transparent;
-    border: #16111A;
-    font-weight: 700;
-    font-size: medium;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  background-color: transparent;
+  border: #16111a;
+  font-weight: 700;
+  font-size: medium;
 }
 
 #boxes {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
 }
 
-#box-1, #box-2, #box-3, #box-4 {
-    border: #16111A;
-    padding: 20px 10px;
-    border: 1px solid white;
+#box-1,
+#box-2,
+#box-3,
+#box-4 {
+  border: #16111a;
+  padding: 20px 10px;
+  border: 1px solid white;
 }
 
 button {
-    background-color: #A638F6;
-    width: 100%;
-    color: white;
-    border: none;
-    padding: 20px;
-    font-weight: 700;
-    font-size: medium;
-    box-sizing: border-box; /* Säkerställer att padding och border inkluderas i bredden */
-    height: 60px; /* Säkerställer samma höjd */
-    cursor: pointer; /* Ändra markörens ikon till en hand */
-    transition: background-color 0.3s ease; /* Gör övergången för bakgrundsfärgen jämn */
+  background-color: #a638f6;
+  width: 100%;
+  color: white;
+  border: none;
+  padding: 20px;
+  font-weight: 700;
+  font-size: medium;
+  box-sizing: border-box;
+  height: 60px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #16111A;
+  background-color: #16111a;
 }
 
 button:active {
-    background-color: #A638F6; /* Återställ till grundfärgen när knappen klickas på */
+  background-color: #a638f6;
 }
 
 button.clicked {
-    background-color: #A638F6; /* Återställ till grundfärgen när knappen klickas på */
+  background-color: #a638f6;
 }
 
 .container3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap:10px;
-    
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
 }
 
 .checkbox-label {
-    display: flex;
-    flex-direction: row;
-    gap:10px;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
 }
 
-/* Stil för checkboxarna */
 .checkbox-label input[type="checkbox"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid white; /* Färg på checkboxens ram */
-    background-color: transparent; /* Bakgrundsfärg för checkboxen */
-    cursor: pointer; /* Visa pekare vid hovring */
-    outline: none; /* Ta bort fokusramen när checkboxen är markerad */
-    display: inline-block; /* Visa checkboxen bredvid texten */
-    vertical-align: middle; /* Centrera checkboxen vertikalt */
-    position: relative; /* Position för SVG-ikonen */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
 }
 
-/* Stil för checkboxarna när de är markerade (checked) */
 .checkbox-label input[type="checkbox"]:checked {
-    background-color: #A638F6; /* Färg på checkboxen när den är markerad */
-    border: 2px solid #A638F6; /* Ändra ramfärg för markerad checkbox */
+  background-color: #a638f6;
+  border: 2px solid #a638f6;
 }
 
-/* Lägg till SVG-ikonen när checkboxen är markerad */
 .checkbox-label input[type="checkbox"]:checked::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 14px; /* Justera storleken på SVG-ikonen efter behov */
-    height: 14px;
-    transform: translate(-50%, -50%);
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%2316111A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>');
-    background-size: contain;
-    background-repeat: no-repeat;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  transform: translate(-50%, -50%);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%2316111A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-/* Stil för texten bredvid checkboxen */
 .checkbox-label span {
-    vertical-align: middle; /* Centrera texten vertikalt i linje med checkboxen */
+  vertical-align: middle;
 }
 
 .label {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-  }
-  
-  .slider-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-  }
-  
-  #range1 {
-    -webkit-appearance: none;
-    appearance: none;
-    margin: 10px 0px;
-    width: 100%; 
-    height: 8px;
-    background: linear-gradient(to right, #A638F6 0%, #2e233d 0%);
-    cursor: pointer;
-    border-radius: 5px;
-    outline: none;
-    transition: background 0.3s ease-in-out;
-  }
-  
-  #range1::-webkit-slider-runnable-track {
-    height: 8px;
-    background: transparent;
-  }
-  
-  #range1::-moz-range-track {
-    height: 8px;
-    background: transparent;
-  }
-  
-  #range1::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    background-color: #fff;
-    border-radius: 50%;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-    margin-top: -6px; /* Centers the thumb */
-  }
-  
-  #range1::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
-    background-color: #fff;
-    border-radius: 50%;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-  }
-  
-  #slider-value {
-    font-size: 1.2em;
-    color: #A638F6;
-    margin-left: 10px; /* Space between slider and value */
-  }
-
-
-
-
-.copy-message {
-    position: absolute; /* Change from fixed to absolute */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    z-index: 999;
-    transition: opacity 0.3s ease-in-out;
+  font-size: 1.2em;
+  margin-bottom: 10px;
 }
 
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#range1 {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 10px 0px;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(to right, #a638f6 0%, #2e233d 0%);
+  cursor: pointer;
+  border-radius: 5px;
+  outline: none;
+  transition: background 0.3s ease-in-out;
+}
+
+#range1::-webkit-slider-runnable-track {
+  height: 8px;
+  background: transparent;
+}
+
+#range1::-moz-range-track {
+  height: 8px;
+  background: transparent;
+}
+
+#range1::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  margin-top: -6px;
+}
+
+#range1::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+#slider-value {
+  font-size: 1.2em;
+  color: #a638f6;
+  margin-left: 10px;
+}
+
+.copy-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 999;
+  transition: opacity 0.3s ease-in-out;
+}
 
 .hidden {
- 
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease-in-out;
-  }
-
-
-
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+}
 
 #message {
-  color: #A638F6;
+  color: #a638f6;
   display: none;
   font-size: smaller;
   position: absolute;
-  top:5vh;
-  
+  top: 5vh;
 }
-  
-  .visible {
-    visibility: visible;
-    opacity: 1;
-    pointer-events: all;
-    transition: opacity 0.3s ease-in-out;
-  }
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
+  transition: opacity 0.3s ease-in-out;
+}
 
 .rowdies-light {
-    font-family: "Rowdies", sans-serif;
-    font-weight: 300;
+  font-family: "Rowdies", sans-serif;
+  font-weight: 300;
 }
 
 .rowdies-regular {
-    font-family: "Rowdies", sans-serif;
-    font-weight: 400;
+  font-family: "Rowdies", sans-serif;
+  font-weight: 400;
 }
 
 .rowdies-bold {
-    font-family: "Rowdies", sans-serif;
-    font-weight: 700;
+  font-family: "Rowdies", sans-serif;
+  font-weight: 700;
 }
 
-/* Media Queries for Responsiveness */
+/* Media Queries */
 @media (max-width: 768px) {
+  body {
+    height: 100vh;
+  }
+  .container {
+    width: 100%;
+    gap: 15px;
+  }
 
-    body {
-        height:100vh;
-    }
-    .container {
-        width: 100%;
-        gap:15px;
-    }
+  .container2 {
+    width: 100%;
+    gap: 10px;
+  }
 
-    .container2 {
-        width: 100%;
-        gap:10px;
-    }
+  .container3 {
+    padding: 10px 0px;
+  }
 
-    .strength-box{
+  .strength-box {
     height: 60px;
-    }
+  }
 
-    .generated-password{
-        font-size: 16px;
-    }
+  .generated-password {
+    font-size: 16px;
+  }
 
-    .password {
-        flex-direction: row; /* Stack elements vertically */
-        align-items: center; /* Center align the elements */
-        width: 100%; /* Make it the same width as container2 */
-    }
+  .password {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
 
-    .password-length {
-        flex-direction: row; /* Stack elements vertically */
-        align-items: start;
-        gap: 5px;
-    }
+  .password-length {
+    flex-direction: row;
+    align-items: start;
+    gap: 5px;
+  }
 
-    .strength-meter-boxes {
-        flex-direction: row; /* Ändrad till rad layout */
-        gap: 5px;
-        font-size: smaller; /* Mindre textstorlek för boxes */
-    }
+  .strength-meter-boxes {
+    flex-direction: row;
+    gap: 5px;
+    font-size: smaller;
+  }
 
-    #boxes {
-        gap: 3px; /* Minska avståndet mellan boxarna */
-    }
+  #boxes {
+    gap: 3px;
+  }
 
-    #box-1, #box-2, #box-3, #box-4 {
-        padding: 10px 5px; /* Minska padding för boxarna */
-    }
+  #box-1,
+  #box-2,
+  #box-3,
+  #box-4 {
+    padding: 10px 5px;
+  }
 
-    #strength {
-        font-size: smaller; /* Mindre textstorlek för strength-text */
-    }
+  #strength {
+    font-size: smaller;
+  }
 
-    .checkbox-label {
-        font-size: 0.9em; /* Adjust font size for smaller screens */
-    }
+  .checkbox-label {
+    font-size: 0.9em;
+  }
 
-    img {
-        width: 130px;
-    }
-    #message {
-        top:2vh;
-        
-      }
+  img {
+    width: 130px;
+  }
+  #message {
+    top: 2vh;
+  }
 }
-
