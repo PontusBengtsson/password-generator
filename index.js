@@ -26,20 +26,15 @@ function uppdateraMeddelandeSynlighet() {
   const inkluderaSiffror = inkluderaSiffrorCheckbox.checked;
   const inkluderaSpecialtecken = inkluderaSpecialteckenCheckbox.checked;
 
-  const messageDiv = document.getElementById("message");
-
   if (
     !inkluderaVersaler &&
     !inkluderaGemener &&
     !inkluderaSiffror &&
     !inkluderaSpecialtecken
   ) {
-    messageDiv.textContent = "Please choose an option to generate password.";
-    messageDiv.classList.remove("hidden");
-    messageDiv.style.display = "block";
+    showMessage("Please choose an option to generate password.");
   } else {
-    messageDiv.classList.add("hidden");
-    messageDiv.style.display = "none";
+    hideMessage();
   }
 }
 
@@ -107,8 +102,6 @@ checkboxar.forEach(checkbox => {
   checkbox.addEventListener('change', uppdateraMeddelandeSynlighet);
 });
 
-
-
 function generatePassword(length, characters) {
   let password = "";
   const charactersLength = characters.length;
@@ -159,11 +152,31 @@ function updatePasswordStrength(password) {
   }
 }
 
+// Funktion för att visa ett meddelande
+function showMessage(message) {
+  const messageDiv = document.getElementById("message");
+  messageDiv.textContent = message;
+  messageDiv.classList.remove("hidden");
+  messageDiv.style.display = "block";
+}
+
+// Funktion för att dölja meddelandet
+function hideMessage() {
+  const messageDiv = document.getElementById("message");
+  messageDiv.classList.add("hidden");
+  messageDiv.style.display = "none";
+}
+
 // Händelselyssnare för SVG-klick
 document.querySelector("svg").addEventListener("click", function () {
   // Hämta texten från #generated-password
   const generatedPassword =
     document.getElementById("generated-password").textContent;
+
+  if (!generatedPassword) {
+    showMessage("There is no password to copy.");
+    return;
+  }
 
   // Skapa ett temporärt input-element för att kopiera texten till urklipp
   const tempInput = document.createElement("input");
@@ -178,9 +191,5 @@ document.querySelector("svg").addEventListener("click", function () {
   document.body.removeChild(tempInput);
 
   // Visa en meddelanderuta för användaren
-  const copyMessage = document.getElementById("copy-message");
-  copyMessage.classList.remove("hidden");
-  setTimeout(function () {
-    copyMessage.classList.add("hidden");
-  }, 2000); // Dölj meddelanderutan efter 2 sekunder
+  showMessage("Password copied to clipboard.");
 });
